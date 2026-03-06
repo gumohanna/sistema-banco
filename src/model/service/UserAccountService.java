@@ -33,7 +33,11 @@ public class UserAccountService implements TaxService{
         this.balance = balance;
     }
 
-    public Double deposit(){
-        return balance += amount;
+    public void deposit(double amount){
+        if (amount > 0){
+            balance += amount;
+        } else {
+            throw new IllegalArgumentException("O valor precisa ser positivo");
+        }
     }
 }

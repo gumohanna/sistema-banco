@@ -11,7 +11,7 @@ public class Program {
         UserAccountService accountService = new UserAccountService();
 
         Set<User> users = new HashSet<>();
-        Map<Double, Double> map = new HashMap<>();
+
         double balance = 0;
 
         Scanner sc = new Scanner(System.in);
@@ -57,7 +57,7 @@ public class Program {
                     System.out.print("Digite o valor a ser depositado: ");
                     double amount = sc.nextDouble();
                     accountService = new UserAccountService(amount, balance);
-                    accountService.deposit();
+                    accountService.deposit(amount);
                     System.out.println("Valor depositado: R$"+ amount);
                     System.out.println("Saldo total: R$"+ accountService.getBalance());
 
